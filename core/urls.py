@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import home_view, get_user_by_id_view, get_post_by_title_view, get_product_by_uuid_view, get_sub_news_by_path_view
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home_view),
+    path('users/<int:id>', get_user_by_id_view),
+    path('posts/<slug:title>', get_post_by_title_view),
+    path('products/<uuid:id>', get_product_by_uuid_view),
+    path('news/<path:path>', get_sub_news_by_path_view),
 ]
+
+# path parameter  : /users/{}
+# query parameter : /users/?gender=male&age=18
