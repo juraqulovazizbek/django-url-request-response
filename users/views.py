@@ -61,4 +61,4 @@ def calculators_view(request: HttpRequest) -> HttpResponse:
         case _:
             result = 'operator not found.'
     
-    return HttpResponse(f'<h1>result: {result}<h1>') # 'result: 3+7=10
+    return HttpResponse(f'<h1>result: {result}<h1>')
